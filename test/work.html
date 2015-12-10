@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+Promise Test!
+</body>
+<script type="text/javascript">
+    var worker = new Worker('work/work1.js');
+    worker.addEventListener('message', function(msg){
+        console.log("msg from worker: ", msg);
+    });
+</script>
+</html>

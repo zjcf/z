@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../src/lib/z.promise.js" ></script>
+</head>
+<body>
+Promise Test!
+</body>
+<script type="text/javascript">
+Promise(function(resolve, reject){
+    console.log("start");
+    resolve("test")
+}).then(function(v){
+    console.log("resolve:" + v);
+    return "test 2";
+    }, function(){ 
+    console.log("reject:" + r);
+}).then(function(v){
+    throw new Error("error test: " + v);
+}).then(function(v){
+    console.log(v);
+}).catch(function(r){console.log(r)});
+console.log("normal stream");
+setTimeout(function(){
+    console.log("other stream");        
+}, 0);
+</script>
+</html>
